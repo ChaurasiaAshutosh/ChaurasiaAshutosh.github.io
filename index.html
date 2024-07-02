@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Chaurasia - DevOps Engineer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .profile-img {
+            width: 200px;
+            border-radius: 50%;
+        }
+        #blog-posts {
+            margin-top: 20px;
+        }
+        .blog-post {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ashutosh Chaurasia</h1>
+        <p>DevOps Engineer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="home">
+        <h2>Welcome to my Portfolio</h2>
+        <img src="index.jpg" alt="Ashutosh Chaurasia" class="profile-img">
+        <h3>Roles:</h3>
+        <ul>
+            <li>DevOps Engineer</li>
+            <li>Cloud Architect</li>
+            <li>Automation Specialist</li>
+        </ul>
+    </div>
+
+    <div class="container" id="about">
+        <h2>About Me</h2>
+        <p>Write a brief description about yourself, your experience, and your skills here.</p>
+    </div>
+
+    <div class="container" id="blog">
+        <h2>Blog</h2>
+        <div id="blog-posts"></div>
+        <h3>Add New Blog Post</h3>
+        <form id="blog-form">
+            <input type="text" id="blog-title" placeholder="Blog Title" required><br>
+            <textarea id="blog-content" placeholder="Blog Content" required></textarea><br>
+            <button type="submit">Add Post</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('blog-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('blog-title').value;
+            const content = document.getElementById('blog-content').value;
+            
+            const blogPost = document.createElement('div');
+            blogPost.className = 'blog-post';
+            blogPost.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+            
+            document.getElementById('blog-posts').prepend(blogPost);
+            
+            document.getElementById('blog-title').value = '';
+            document.getElementById('blog-content').value = '';
+        });
+    </script>
+</body>
+</html>
